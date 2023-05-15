@@ -57,7 +57,7 @@ static int serverSend(void* self_, const uint8_t* data, size_t size)
     return datagramTransportLocalPacketsWrite(&self->client.packets, data, size);
 }
 
-static int serverReceive(void* self_, uint8_t* data, size_t size)
+static ssize_t serverReceive(void* self_, uint8_t* data, size_t size)
 {
     DatagramTransportLocal* self = (DatagramTransportLocal*) self_;
 
@@ -71,7 +71,7 @@ static int clientSend(void* self_, const uint8_t* data, size_t size)
     return datagramTransportLocalPacketsWrite(&self->server.packets, data, size);
 }
 
-static int clientReceive(void* self_, uint8_t* data, size_t size)
+static ssize_t clientReceive(void* self_, uint8_t* data, size_t size)
 {
     DatagramTransportLocal* self = (DatagramTransportLocal*) self_;
 
