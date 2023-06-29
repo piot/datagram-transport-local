@@ -4,10 +4,6 @@ name = "piot/datagram-transport-local"
 version = "0.0.0"
 
 [[dependencies]]
-name = 'piot/clog'
-version = "*"
-
-[[dependencies]]
 name = 'piot/datagram-transport-c'
 version = "*"
 

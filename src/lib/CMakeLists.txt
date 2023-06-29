@@ -42,7 +42,7 @@ endif()
 file(GLOB lib_src FOLLOW_SYMLINKS "./*.c")
 
 
-add_library(datagram-transport-local ${lib_src})
+add_library(datagram-transport-local STATIC ${lib_src})
 
 
 if(APPLE)
@@ -125,7 +125,7 @@ else()
 endif()
 
 
-target_link_libraries(datagram-transport-local PUBLIC clog datagram-transport discoid)
+target_link_libraries(datagram-transport-local PUBLIC datagram-transport PUBLIC discoid)
 
 
 if(useSanitizers)
