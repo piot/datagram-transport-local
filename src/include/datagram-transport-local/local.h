@@ -6,7 +6,6 @@
 
 #include <datagram-transport/transport.h>
 #include <discoid/circular_buffer.h>
-#include <monotonic-time/monotonic_time.h>
 
 typedef struct DatagramTransportLocalPacket {
     size_t octetCount;
