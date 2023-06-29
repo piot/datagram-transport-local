@@ -39,7 +39,7 @@ static int datagramTransportLocalPacketsRead(DatagramTransportLocalPackets* self
     self->count--;
     if (packet->octetCount > maxCount) {
         CLOG_ERROR("packet is too big for target buffer")
-        return -3;
+        // return -3;
     }
 
     int discoidResult = discoidBufferRead(&self->buffer, target, packet->octetCount);
@@ -47,7 +47,7 @@ static int datagramTransportLocalPacketsRead(DatagramTransportLocalPackets* self
         return discoidResult;
     }
 
-    return packet->octetCount;
+    return (int) packet->octetCount;
 }
 
 static int serverSend(void* self_, const uint8_t* data, size_t size)
